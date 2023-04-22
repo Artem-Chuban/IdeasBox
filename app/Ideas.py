@@ -14,3 +14,8 @@ class Ideas:
     def get(self, offset: int, limit: int) -> list[Idea]:
         cursor = self.__collection.find().skip(offset).limit(limit)
         return [Idea(name=document["name"], description=document["description"]) for document in cursor]
+
+    def random(self) -> Idea | None:
+        if self.__collection.count_documents({}) == 0:
+            return None
+        return self.__collection.aggregate([{"$sample": {"size": 1}}]).next()

@@ -13,3 +13,9 @@ async def get_idea(offset: int = 0, limit: int = 10) -> list[Idea]:
 @app.post("/idea")
 async def post_idea(idea: Idea) -> None:
     ideas.append(idea)
+
+
+@app.get("/idea/random")
+async def random_idea() -> Idea | None:
+    idea = ideas.random()
+    return idea
