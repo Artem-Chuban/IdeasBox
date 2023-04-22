@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from . import Idea, Ideas
+from app import Idea, Ideas
 
 app = FastAPI()
 ideas = Ideas()
@@ -11,5 +11,5 @@ async def get_idea(offset: int = 0, limit: int = 10) -> list[Idea]:
 
 
 @app.post("/idea")
-async def post_idea(idea: Idea):
+async def post_idea(idea: Idea) -> None:
     ideas.append(idea)

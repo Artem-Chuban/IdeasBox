@@ -1,2 +1,2 @@
-from Idea import Idea
-from Ideas import Ideas
+from app.Idea import Idea
+from app.Ideas import Ideas
