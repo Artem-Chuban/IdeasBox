@@ -1,6 +1,11 @@
 version: "3"
 
 services:
+  svelte:
+    build: frontend
+    ports:
+      - "80:80"
+
   fastapi:
     build: backend
     ports:
