@@ -1,5 +1,6 @@
 from fastapi import FastAPI
-from app import Idea, Ideas
+from app.schemas import Idea
+from app.models import Ideas
 
 app = FastAPI()
 ideas = Ideas()

@@ -1,5 +1,5 @@
 from pymongo import MongoClient
-from app import Idea
+from ..schemas import Idea
 
 
 class Ideas:

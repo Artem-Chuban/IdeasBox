@@ -2,17 +2,9 @@ version: "3"
 
 services:
   fastapi:
-    build: ./
+    build: backend
     ports:
       - "8000:80"
-    networks:
-      - mongodb
 
   mongodb:
     image: mongodb/mongodb-community-server
-    networks:
-      - mongodb
-
-networks:
-  mongodb:
-    name: mongodb
