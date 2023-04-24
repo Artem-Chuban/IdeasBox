@@ -19,3 +19,6 @@ class Ideas:
         if self.__collection.count_documents({}) == 0:
             return None
         return self.__collection.aggregate([{"$sample": {"size": 1}}]).next()
+
+    def count(self) -> int:
+        return self.__collection.count_documents({})

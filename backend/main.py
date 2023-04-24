@@ -18,5 +18,9 @@ async def post_idea(idea: Idea) -> None:
 
 @app.get("/idea/random")
 async def random_idea() -> Idea | None:
-    idea = ideas.random()
-    return idea
+    return ideas.random()
+
+
+@app.get("/idea/count")
+async def count_idea() -> int:
+    return ideas.count()
